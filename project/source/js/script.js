@@ -1,47 +1,5 @@
 
-const messageSuccess = document.querySelector('.success');
-const messageError = document.querySelector('.error');
-const button = document.querySelector('.form__button');
-const fieldName = document.querySelector('.name');
-const fieldMail = document.querySelector('.mail');
-const fieldСonditions = document.querySelector('.conditions');
 
-const SHOW_TIME = 1000;
-
-button.addEventListener('click', () => {
-  if ((fieldName.checkValidity() === true) & (fieldMail.checkValidity() === true) & (fieldСonditions.checkValidity() === true)) {
-    mindbox("async", {
-      operation: "LandingEmail",
-      data: {
-        customer: {
-          authenticationTicket: "Забрать тикет из урла",
-          email: "<Email>",
-          subscriptions: [
-            {
-              pointOfContact: "Email",
-              isSubscribed: "true"
-            }
-          ]
-        }
-      },
-      onSuccess: function () {
-        messageSuccess.classList.remove('visually-hidden');
-
-        setTimeout(() => {
-          messageSuccess.classList.add('visually-hidden');
-        }, SHOW_TIME);
-      },
-
-      onError: function (error) {
-        messageError.classList.remove('visually-hidden');
-
-        setTimeout(() => {
-          messageError.classList.add('visually-hidden');
-        }, SHOW_TIME);
-      }
-    });
-  }
-});
 
 
 

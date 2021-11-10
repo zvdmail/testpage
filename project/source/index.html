@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Test</title>
+  <title>Подписка на рассылку hoegl</title>
   <script>
     mindbox = window.mindbox || function () { mindbox.queue.push(arguments); };
     mindbox.queue = mindbox.queue || [];
@@ -32,7 +32,7 @@
           <img class="header__logo-image " src="img/logo__mobile.png" width="40" height="40" alt="Högl">
         </picture>
       </a>
-      <a class="header__shops shops" href="https://hoegl.ru/#chooseCity">
+      <a class="header__shops shops" href="https://hoegl.ru/about/stores/">
         <span class="shops__text">Магазины</span><img class="shops__image" src="img/icon__point.png" width="12.18"
           height="16.8" alt="">
       </a>
@@ -81,8 +81,8 @@
 
           <label class="conditions__description conditions__text" for="conditions">
             <p class="conditions__link-wrapper">Принимаю <a class="conditions__link"
-                href="https://hoegl.ru/oferta/">условия оферты</a></span> и&nbsp;<a class="conditions__link"
-                href="https://hoegl.ru/privacy/">политики конфиденциальности</a></p>
+                href="https://hoegl.ru/about/privacy/">условия оферты</a></span> и&nbsp;<a class="conditions__link"
+                href="https://hoegl.ru/about/privacy/">политики конфиденциальности</a></p>
           </label>
         </div>
       </form>
@@ -91,7 +91,7 @@
     <section class="gallery">
       <ul class="gallery__list">
         <li class="gallery__item">
-          <a class="gallery__link" href="#" aria-label="image">
+          <!-- <a class="gallery__link" href="#" aria-label="image"> -->
             <picture>
               <source type="image/webp" media="(min-width: 1440px)"
                 srcset="img/gallery__1__big.webp 1x, img/gallery__1__big@2x.webp 2x">
@@ -108,10 +108,10 @@
               <img class="gallery__image" src="img/gallery__1__mobile.jpg" srcset="img/gallery__1__mobile@2x.jpg 2x"
                 width="225" height="263.66" alt="Image">
             </picture>
-          </a>
+          <!-- </a> -->
         </li>
         <li class="gallery__item">
-          <a class="gallery__link" href="#" aria-label="image">
+          <!-- <a class="gallery__link" href="#" aria-label="image"> -->
             <picture>
               <source type="image/webp" media="(min-width: 1440px)"
                 srcset="img/gallery__2__big.webp 1x, img/gallery__2__big@2x.webp 2x">
@@ -127,10 +127,10 @@
                 srcset="img/gallery__2__tablet.jpg 1x, img/gallery__2__tablet@2x.jpg 2x">
               <img class="gallery__image" src="http://placehold.it/225x263.66" width="225" height="263.66" alt="Image">
             </picture>
-          </a>
+          <!-- </a> -->
         </li>
         <li class="gallery__item">
-          <a class="gallery__link" href="#" aria-label="image">
+          <!-- <a class="gallery__link" href="#" aria-label="image"> -->
             <picture>
               <source type="image/webp" media="(min-width: 1440px)"
                 srcset="img/gallery__3__big.webp 1x, img/gallery__3__big@2x.webp 2x">
@@ -146,7 +146,7 @@
                 srcset="img/gallery__3__tablet.jpg 1x, img/gallery__3__tablet@2x.jpg 2x">
               <img class="gallery__image" src="http://placehold.it/225x263.66" width="225" height="263.66" alt="Image">
             </picture>
-          </a>
+          <!-- </a> -->
         </li>
     </section>
   </main>
@@ -208,7 +208,51 @@
 
 
 
-  <script src="js/script.js"></script>
+  <script>
+    const messageSuccess = document.querySelector('.success');
+const messageError = document.querySelector('.error');
+const button = document.querySelector('.form__button');
+const fieldName = document.querySelector('.name');
+const fieldMail = document.querySelector('.mail');
+const fieldСonditions = document.querySelector('.conditions');
+
+const SHOW_TIME = 1000;
+
+button.addEventListener('click', () => {
+  if ((fieldName.checkValidity() === true) & (fieldMail.checkValidity() === true) & (fieldСonditions.checkValidity() === true)) {
+    mindbox("async", {
+      operation: "LandingEmail",
+      data: {
+        customer: {
+          authenticationTicket: "Забрать тикет из урла",
+          email: "<Email>",
+          subscriptions: [
+            {
+              pointOfContact: "Email",
+              isSubscribed: "true"
+            }
+          ]
+        }
+      },
+      onSuccess: function () {
+        messageSuccess.classList.remove('visually-hidden');
+
+        setTimeout(() => {
+          messageSuccess.classList.add('visually-hidden');
+        }, SHOW_TIME);
+      },
+
+      onError: function (error) {
+        messageError.classList.remove('visually-hidden');
+
+        setTimeout(() => {
+          messageError.classList.add('visually-hidden');
+        }, SHOW_TIME);
+      }
+    });
+  }
+});
+  </script>
 
 </body>
 
