@@ -9,7 +9,7 @@ const fieldName = document.querySelector('.name');
 const fieldMail = document.querySelector('.mail');
 const fieldСonditions = document.querySelector('.conditions');
 
-const SHOW_TIME = 10000;
+const SHOW_TIME = 5000;
 
 button.addEventListener('click', () => {
   if ((fieldName.checkValidity() === true) & (fieldMail.checkValidity() === true) & (fieldСonditions.checkValidity() === true)) {
@@ -18,7 +18,7 @@ button.addEventListener('click', () => {
       data: {
         customer: {
           authenticationTicket: "Забрать тикет из урла",
-          email: "<Email>",
+          email: "%email%",
           subscriptions: [
             {
               pointOfContact: "Email",
