@@ -1,0 +1,77 @@
+.message {
+  margin-top: 4%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.1px;
+  color: @message-button;
+  background-color: @white;
+
+  @media (min-width: @tablet-width) {
+    font-size: 16px;
+    line-height: 19.5px;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 22px;
+    line-height: 26.82px;
+  }
+}
+
+.message__button-wrapper {
+  text-align: right;
+}
+
+.message-button {
+  width: 30px;
+  height: 20px;
+  padding: 0;
+
+  background-color: @white;
+  cursor: pointer;
+  border: none;
+
+  @media (min-width: @tablet-width) {
+    width: 50px;
+    height: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 60px;
+    height: 40px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 1px;
+    background-color: @message-button;
+
+    @media (min-width: @tablet-width) {
+      width: 15px;
+      height: 1px;
+    }
+
+    @media (min-width: @desktop-width) {
+      width: 20px;
+      height: 1px;
+    }
+  }
+
+  &::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:active {
+    opacity: 0.3;
+    color: @button-focus;
+  }
+}

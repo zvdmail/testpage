@@ -1,0 +1,67 @@
+.main {
+  background-color: @white;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sale-wrapper {
+  display: flex;
+  margin: 10px 0;
+  justify-content: space-between;
+
+
+  @media (min-width: @tablet-width) {
+    padding-top: 0;
+    margin-top: 22px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 42px;
+    margin-left: 5%;
+    margin-right: 3%;
+  }
+}
+
+.intro-text {
+  margin: 25px 0 0;
+  font-weight: 700;
+  font-size: 8.5px;
+  line-height: 23px;
+  background-color: @grey;
+
+  @media (min-width: @tablet-width) {
+    font-size: 16px;
+    line-height: 40px;
+    margin: 49px 0 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 57px;
+    margin-top: 52px;
+    margin-left: 5%;
+    margin-right: 3%;
+    padding-left: 40px;
+  }
+}
+
+.sale-text {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  min-width: 178px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 24px;
+    line-height: 10px;
+    padding: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 32px;
+    min-width: 432px;
+    padding-left: 5px;
+  }
+}

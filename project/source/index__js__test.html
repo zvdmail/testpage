@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+  <!-- <script>
+    mindbox = window.mindbox || function () { mindbox.queue.push(arguments); };
+    mindbox.queue = mindbox.queue || [];
+    mindbox('create', {
+      endpointId: 'Hoegl.ru'
+    });
+  </script>
+  <script src="https://api.mindbox.ru/scripts/v1/tracker.js" async></script> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preload" href="fonts/open-sans-v27-latin_cyrillic-regular.woff2" as="font">
+  <link href="css/style.min.css" rel="stylesheet">
+  <link rel="icon" href="https://hoegl.ru/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="https://hoegl.ru/favicon.png" type="image/x-icon">
+  <!-- <link href="less/style.less" rel="stylesheet"> -->
+
+</head>
+
+<body class="page__body">
+
+  <header class="header">
+    <div class="header-wrapper">
+      <a class="header__logo" href="https://hoegl.ru/">
+        <picture>
+          <source media="(min-width: 1440px)" srcset="img/logo__big.png">
+          <source media="(min-width: 1280px)" srcset="img/logo__desktop.png">
+          <source media="(min-width: 768px)" srcset="img/logo__tablet.png">
+          <!-- <img class="header__logo-image" src="img/logotype-mobile.svg" width="40" height="40" alt="Hoegl"> -->
+          <img class="header__logo-image " src="img/logo__mobile.png" width="40" height="40" alt="Hoegl">
+        </picture>
+      </a>
+      <a class="header__shops shops" href="https://hoegl.ru/#chooseCity">
+        <span class="shops__text">Магазины</span><img class="shops__image" src="img/icon__point.png" width="12.18"
+          height="16.8" alt="Pink">
+      </a>
+    </div>
+  </header>
+
+  <main class="main">
+    <h1 class="intro-text">Подпишитесь на рассылку и получите персональный промокод</h1>
+
+    <div class="sale-wrapper">
+      <hr class="line line--left" align="left" width="19%" size="0.246487" color="#000000" />
+      <!-- <div class="div-line line--left"></div> -->
+      <p class="sale-text">- 5% на следующую покупку</p>
+      <hr class="line line--right" align="right" width="19%" size="0.246487" color="#000000" />
+    </div>
+
+    <section class="form-wrapper">
+      <form class="form" action="#" method="post">
+        <ul class="form__list" role="none">
+          <li class="form__item">
+            <!-- <label class="form__description name" for="field-name">Имя:</label> -->
+            <input class="form__field form__description name" type="text" name="name" id="field-name" placeholder="Имя:"
+              required size="130">
+          </li>
+          <li class="form__item">
+            <!-- <label class="form__description mail" for="field-mail">Электронная&nbsp;почта:</label> -->
+            <input class="form__field form__description mail" type="email" name="mail" id="field-mail"
+              placeholder="Электронная почта:" required
+              pattern="^([\p{L}0-9_\-!#\$%&’\*\+/=\?\^`\{}\|~])+([\.\p{L}0-9_\-!#\$%&’\*\+/=\?\^`\{}\|~])*@([\p{L}0-9]([\p{L}0-9\-]{0,61}[\p{L}0-9])?\.)*[\p{L}0-9]([\p{L}0-9\-]{0,61}[\p{L}0-9])?$"
+              size="30">
+          </li>
+        </ul>
+
+        <div class="message success visually-hidden">
+          <!-- <div class="message__button-wrapper">
+            <button class="message-button success--js " type="button"><span class="visually-hidden">Закрыть сообщение</span></button>
+          </div> -->
+          <p class="message__text">Промокод уже выслан, проверьте почту</p>
+        </div>
+
+        <div class="message error visually-hidden">
+          <!-- <div class="message__button-wrapper">
+            <button class="message-button error--js" type="button"><span class="visually-hidden">Закрыть сообщение</span></button>
+          </div> -->
+          <p class="message__text">Проверьте корректность данных</p>
+        </div>
+
+        <button class="form__button button " type="submit">Отправить</button>
+
+        <!-- <div class="conditions-wrapper">
+        <label class="conditions__description" for="conditions">
+          <input class="conditions__field" type="checkbox" id="conditions" checked>
+          <span class="conditions__checkbox"></span><p class="conditions__text" >
+          Принимаю <a>условия оферты</a><br>и <a>политики конфиденциальности</a></p>
+        </label>
+      </div> -->
+
+        <div class="conditions-wrapper">
+          <input class="conditions__field conditions" type="checkbox" id="conditions" required>
+
+          <label class="conditions__description conditions__text" for="conditions">
+            <p class="conditions__link-wrapper">Принимаю <a class="conditions__link"
+                href="https://hoegl.ru/oferta/">условия оферты</a></span> и&nbsp;<a class="conditions__link"
+                href="https://hoegl.ru/privacy/">политики конфиденциальности</a></p>
+          </label>
+        </div>
+      </form>
+    </section>
+
+    <section class="gallery">
+      <ul class="gallery__list">
+        <li class="gallery__item">
+          <a class="gallery__link" href="#" aria-label="image">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="img/gallery__1__big.jpg">
+              <source media="(min-width: 1280px)" srcset="img/gallery__1__desktop.jpg">
+              <source media="(min-width: 768px)" srcset="img/gallery__1__tablet.jpg">
+              <img class="gallery__image" src="img/gallery__1__mobile.jpg" width="225" height="263.66" alt="Image">
+            </picture>
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a class="gallery__link" href="#" aria-label="image">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="img/gallery__2__big.jpg">
+              <source media="(min-width: 1280px)" srcset="img/gallery__2__desktop.jpg">
+              <source media="(min-width: 768px)" srcset="img/gallery__2__tablet.jpg">
+              <img class="gallery__image" src="http://placehold.it/225x263.66" width="225" height="263.66" alt="Image">
+            </picture>
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a class="gallery__link" href="#" aria-label="image">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="img/gallery__3__big.jpg">
+              <source media="(min-width: 1280px)" srcset="img/gallery__3__desktop.jpg">
+              <source media="(min-width: 768px)" srcset="img/gallery__3__tablet.jpg">
+              <img class="gallery__image" src="http://placehold.it/225x263.66" width="225" height="263.66" alt="Image">
+            </picture>
+          </a>
+        </li>
+    </section>
+  </main>
+
+
+
+  <footer class="footer social copyright footer-intro">
+    <section class="footer-intro__wrapper">
+      <p class="footer-intro__title">Контакты</p>
+      <p class="footer-intro__text">Остались вопросы?</p>
+    </section>
+
+    <div class="social__wrapper">
+      <ul class="social__list">
+        <li class="social__item">
+          <a class="social__link social__link--whatsapp"
+            href="https://api.whatsapp.com/send?phone=79031550123&text=&source=&data" aria-label="Whatsapp">
+            <!-- <svg class="social__icon" width="15.78" height="15.78">
+              <use xlink:href="img/sprite.svg#icon-whatsapp"></use>
+            </svg> -->
+            <!-- <picture>
+            <source media="(min-width: 1440px)" srcset="http://placehold.it/42.13x42.13">
+            <source media="(min-width: 1280px)" srcset="http://placehold.it/31x31">
+            <source media="(min-width: 768px)" srcset="http://placehold.it/27.82x27.82"> -->
+            <img class="social__icon social__icon--whatsapp" src="img/icon__whatsapp.png" width="15.78" height="15.78"
+              alt="Whatsapp">
+            <!-- </picture> -->
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link social__link--instagram" href="https://www.instagram.com/hogl_russia/"
+            aria-label="Instagram">
+            <!-- <svg class="social__icon" width="15.78" height="15.78">
+              <use xlink:href="img/sprite.svg#icon-instagram"></use>
+            </svg> -->
+            <!-- <picture>
+            <source media="(min-width: 1440px)" srcset="http://placehold.it/42.13x42.13">
+            <source media="(min-width: 1280px)" srcset="http://placehold.it/31x31">
+            <source media="(min-width: 768px)" srcset="http://placehold.it/27.82x27.82"> -->
+            <img class="social__icon social__icon--instagram" src="img/icon__instagram.png" width="15.78" height="15.78"
+              alt="Instagram">
+            <!-- </picture> -->
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link social__link--facebook" href="https://www.facebook.com/hoglrussia/?fref=ts"
+            aria-label="Facebook">
+            <!-- <svg class="social__icon" width="15.78" height="15.78">
+              <use xlink:href="img/sprite.svg#icon-facebook"></use>
+            </svg> -->
+            <!-- <picture>
+            <source media="(min-width: 1440px)" srcset="http://placehold.it/42.13x42.13">
+            <source media="(min-width: 1280px)" srcset="http://placehold.it/31x31">
+            <source media="(min-width: 768px)" srcset="http://placehold.it/27.82x27.82"> -->
+            <img class="social__icon social__icon--facebook" src="img/icon__facebook.png" width="15.78" height="15.78"
+              alt="Facebook">
+            <!-- </picture> -->
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link social__link--telegram" href="tg://resolve?domain=hogl_russia" aria-label="Telegram">
+            <!-- <svg class="social__icon" width="16.29" height="15.78">
+              <use xlink:href="img/sprite.svg#icon-telegram"></use>
+            </svg> -->
+            <!-- <picture>
+            <source media="(min-width: 1440px)" srcset="http://placehold.it/43.49x42.13">
+            <source media="(min-width: 1280px)" srcset="http://placehold.it/32x31">
+            <source media="(min-width: 768px)" srcset="http://placehold.it/28.72x28.72"> -->
+            <img class="social__icon social__icon--telegram" src="img/icon__telegram.png" width="16.29" height="15.78"
+              alt="Telegram">
+            <!-- </picture> -->
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link social__link--vk" href="https://vk.com/public2173597" aria-label="Vk">
+            <!-- <svg class="social__icon" width="19.86" height="19.86">
+              <use xlink:href="img/sprite.svg#icon-vkontakte"></use>
+            </svg> -->
+            <!-- <picture>
+            <source media="(min-width: 1440px)" srcset="http://placehold.it/53x53">
+            <source media="(min-width: 1280px)" srcset="http://placehold.it/39x39">
+            <source media="(min-width: 768px)" srcset="http://placehold.it/35x35"> -->
+            <img class="social__icon social__icon--vk" src="img/icon__vk.png" width="19.86" height="19.86" alt="Vk">
+            <!-- </picture> -->
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link social__link--youtube" href="https://www.youtube.com/channel/UCuElfEFeSBYDR1EXB17bjIQ"
+            aria-label="Youtube">
+            <!-- <svg class="social__icon" width="18.84" height="18.84">
+              <use xlink:href="img/sprite.svg#icon-youtube"></use>
+            </svg> -->
+            <!-- <picture>
+            <source media="(min-width: 1440px)" srcset="http://placehold.it/50.28x50.28">
+            <source media="(min-width: 1280px)" srcset="http://placehold.it/37x37">
+            <source media="(min-width: 768px)" srcset="http://placehold.it/33.21x33.21"> -->
+            <img class="social__icon social__icon--youtube" src="img/icon__youtube.png" width="18.84" height="18.84"
+              alt="Youtube">
+            <!-- </picture> -->
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="copyright__wrapper">
+      <p class="copyright__text"><a class="copyright__link">© 2021 HÖGL SHOE FASHION</a></p>
+    </div>
+  </footer>
+
+  <!-- <script src="js/script.min.js">
+  </script> -->
+  <script>
+// const message = document.querySelector('.message');
+const messageSuccess = document.querySelector('.success');
+const messageError = document.querySelector('.error');
+const button = document.querySelector('.form__button');
+const fieldName = document.querySelector('.name');
+const fieldMail = document.querySelector('.mail');
+const fieldСonditions = document.querySelector('.conditions');
+
+
+
+const SHOW_TIME = 10000;
+
+// Показ сообщения об успешной отправке
+const showMessageSuccess = (() => {
+  messageSuccess.classList.remove('visually-hidden');
+}, SHOW_TIME);
+
+
+// Показ сообщения об ошибке отправки
+const showMessageError = (() => {
+  messageError.classList.remove('visually-hidden');
+}, SHOW_TIME);
+
+
+// // Код вызова для передачи адреса почты в Mindbox
+// const mindbox = () => {("async", {
+//   operation: "LandingEmail",
+//   data: {
+//     customer: {
+//       authenticationTicket: "Забрать тикет из урла",
+//       email: "<Email>",
+//       subscriptions: [
+//         {
+//           pointOfContact: "Email",
+//           isSubscribed: "true"
+//         }
+//       ]
+//     }
+//   },
+//   onSuccess: showMessageSuccess(),
+//   onError: showMessageError(),
+// })};
+
+// // Слушатель нажатия кнопки отправки
+// button.addEventListener('click', function () {
+//   mindbox();
+// });
+
+
+button.addEventListener('click', function () {
+  if ((fieldName.checkValidity() === true) & (fieldMail.checkValidity() === true) & (fieldСonditions.checkValidity() === true) ) {
+  alert("Привет!");
+  }
+});
+
+  </script>
+
+</body>
+
+</html>

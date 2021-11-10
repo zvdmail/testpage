@@ -1,0 +1,123 @@
+.form-wrapper {
+  margin-top: 28px;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 42px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 70px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 70px;
+  }
+}
+
+.form {
+  text-align: center;
+  margin-left: 13%;
+  margin-right: 13%;
+
+  @media (min-width: @tablet-width) {
+    margin-left: 17.5%;
+    margin-right: 16.7%;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-left: 21%;
+    margin-right: 19%;
+  }
+}
+
+.form__list {
+  line-height: 22px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form__item {
+  display: flex;
+  border: 1px solid @form;
+  box-sizing: border-box;
+  border-radius: 1.82536px;
+  height: 18px;
+  color: @form;
+
+  @media (min-width: @tablet-width) {
+    height: 30px;
+    padding: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    height: 40px;
+  }
+}
+
+.form__item:first-child {
+  margin-bottom: 2px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 8px;
+  }
+}
+
+.form__description {
+  text-align: left;
+}
+
+
+.form__field {
+  width: 100%;
+  border: none;
+  background-color: @white;
+  padding: 2px 0 2px 5px;
+  font-size: 10px;
+  line-height: 16px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 16px;
+    line-height: 10px;
+    padding-left: 10px;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 22px;
+    line-height: 20px;
+  }
+
+  &::placeholder {
+    color: @form;
+  }
+
+  &:hover {
+    outline: none;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+  }
+
+  &:active,
+  &:focus {
+    background-color: @white;
+  }
+
+  &:focus:invalid {
+    outline: 2px solid @outline;
+  }
+}
+
+.mail {
+  @media (min-width: @tablet-width) {
+    letter-spacing: 0.3px;
+  }
+
+  @media (min-width: @desktop-width) {
+    letter-spacing: 1px;
+  }
+}
+
+.name {
+  @media (min-width: @desktop-width) {
+    letter-spacing: 1px;
+  }
+}

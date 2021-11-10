@@ -1,0 +1,35 @@
+.line {
+  border: none;
+  vertical-align: middle;
+  height: 0.246487px;
+  color: @line;
+  width: 30%;
+
+  @media (min-width: @tablet-width) {
+    width: 25%;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 29%;
+  }
+}
+
+.line--right {
+  @media (min-width: @desktop-width) {
+    margin-left: 20px;
+  }
+}
+
+.line--left {
+  text-align: left;
+  margin-right: 1%;
+  margin-left: 0;
+  transform: rotate(180deg);
+}
+
+.line--right {
+  text-align: right;
+  margin-left: 1%;
+  margin-right: 0;
+  transform: rotate(180deg);
+}
