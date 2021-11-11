@@ -215,16 +215,21 @@ const button = document.querySelector('.form__button');
 const fieldName = document.querySelector('.name');
 const fieldMail = document.querySelector('.mail');
 const fieldСonditions = document.querySelector('.conditions');
+// const form = document.querySelector('.form');
+const link = "https://SUBDOMAIN.zendesk.com/agent/tickets/{{ticket.id}}";
+const ticket = link.split('/')[5].trim();
 
 const SHOW_TIME = 5000;
 
 button.addEventListener('click', () => {
   if ((fieldName.checkValidity() === true) & (fieldMail.checkValidity() === true) & (fieldСonditions.checkValidity() === true)) {
+
+    function wrapper (ticket) {
     mindbox("async", {
       operation: "LandingEmail",
       data: {
         customer: {
-          authenticationTicket: "Забрать тикет из урла",
+          authenticationTicket: ticket,
           email: "mail-test-ya123@yandex.ru",
           subscriptions: [
             {
@@ -251,6 +256,7 @@ button.addEventListener('click', () => {
       }
     });
   }
+}
 });
   </script>
 
