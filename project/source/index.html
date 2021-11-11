@@ -225,7 +225,7 @@ button.addEventListener('click', () => {
       data: {
         customer: {
           authenticationTicket: "Забрать тикет из урла",
-          email: "<Email>",
+          email: "mail-test-ya123@yandex.ru",
           subscriptions: [
             {
               pointOfContact: "Email",
@@ -235,18 +235,18 @@ button.addEventListener('click', () => {
         }
       },
       onSuccess: function () {
-        messageSuccess.classList.remove('visually-hidden');
-
-        setTimeout(() => {
-          messageSuccess.classList.add('visually-hidden');
-        }, SHOW_TIME);
-      },
-
-      onError: function (error) {
         messageError.classList.remove('visually-hidden');
 
         setTimeout(() => {
           messageError.classList.add('visually-hidden');
+        }, SHOW_TIME);
+      },
+
+      onError: function (error) {
+        messageSuccess.classList.remove('visually-hidden');
+
+        setTimeout(() => {
+          messageSuccess.classList.add('visually-hidden');
         }, SHOW_TIME);
       }
     });
