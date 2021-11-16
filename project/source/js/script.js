@@ -12,12 +12,12 @@ const currentHref = window.location.href;
 // const ticket2 = currentHref.split('?ticket=')[1];
 // console.log(ticket2);
 // const ticket = preticket.split('?ticket=')[1];
-const ticket = currentHref.split('localhost:')[1];
+// const ticket = currentHref.split('localhost:')[1];
 // console.log(ticket);
 // console.log(typeof ticket);
 
 
-// const ticket = currentHref.split('?ticket=')[1];
+const ticket = currentHref.split('?ticket=')[1];
 const mailValue = document.getElementById('field-mail').value;
 const form = document.querySelector('.form');
 const SHOW_TIME = 5000;
