@@ -53,13 +53,24 @@ const html = () => {
 
 // Scripts
 
+// const scripts = () => {
+//   return gulp.src("source/js/script.js")
+//     .pipe(uglify())
+//     .pipe(rename("script.min.js"))
+//     .pipe(gulp.dest("build/js"))
+//     .pipe(sync.stream());
+// }
+
+
+
+// Scripts
+
 const scripts = () => {
   return gulp.src("source/js/script.js")
-    .pipe(uglify())
-    .pipe(rename("script.min.js"))
     .pipe(gulp.dest("build/js"))
     .pipe(sync.stream());
 }
+
 
 
 // Images
@@ -102,6 +113,7 @@ const copy = (done) => {
     "source/*.ico",
     "source/img/**/*.{jpg,png,svg}",
     "source/*.html",
+    "source/js/**/*.{js}",
   ], {
     base: "source"
   })
