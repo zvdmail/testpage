@@ -217,9 +217,15 @@ const fieldMail = document.querySelector('.mail');
 const fieldСonditions = document.querySelector('.conditions');
 // const form = document.querySelector('.form');
 
+// const link = "https://SUBDOMAIN.zendesk.com/agent/tickets/{{ticket.id}}";
+// const preticket = currentHref.split('/')[4].trim();
 
-const link = "https://SUBDOMAIN.zendesk.com/agent/tickets/{{ticket.id}}";
-const ticket = link.split('/')[5].trim();
+const currentLocation = window.location;
+const currentHref = window.location.href;
+// const ticket2 = currentHref.split('?ticket=')[1];
+// console.log(ticket2);
+// const ticket = preticket.split('?ticket=')[1];
+const ticket = currentHref.split('?ticket=')[1];
 
 const SHOW_TIME = 5000;
 
