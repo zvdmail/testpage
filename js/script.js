@@ -11,7 +11,7 @@ const currentHref = window.location.href;
 // var formData = new FormData(document.querySelector('.form'))
 // const ticket2 = currentHref.split('?ticket=')[1];
 // console.log(ticket2);
-const ticket = preticket.split('?ticket=')[1];
+// const ticket = preticket.split('?ticket=')[1];
 const ticket = currentHref.split('localhost:')[1];
 // console.log(ticket);
 // console.log(typeof ticket);
