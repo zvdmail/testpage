@@ -1,4 +1,3 @@
-
 const messageSuccess = document.querySelector('.success');
 const messageError = document.querySelector('.error');
 const button = document.querySelector('.form__button');
@@ -7,15 +6,6 @@ const fieldMail = document.querySelector('.mail');
 const fieldСonditions = document.querySelector('.conditions');
 const currentLocation = window.location;
 const currentHref = window.location.href;
-
-// var formData = new FormData(document.querySelector('.form'))
-// const ticket2 = currentHref.split('?ticket=')[1];
-// console.log(ticket2);
-// const ticket = preticket.split('?ticket=')[1];
-// const ticket = currentHref.split('localhost:')[1];
-// console.log(ticket);
-// console.log(typeof ticket);
-
 
 const ticket = currentHref.split('?ticket=')[1];
 const mailValue = document.getElementById('field-mail').value;
