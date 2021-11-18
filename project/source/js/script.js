@@ -69,6 +69,7 @@ const wrapperMindbox = () => {
         showMessageError();
       }
     });
+    console.log("mindbox");
   }
 
 
@@ -82,6 +83,7 @@ form.addEventListener('submit', (e) => {
     console.log("ticket: "+ticket);
     console.log("email:"+ fieldMail);
     wrapperMindbox(ticket, fieldMail);
+
 }
 });
 
