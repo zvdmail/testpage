@@ -33,7 +33,7 @@ const showMessageSuccess = () => {
 
 // Показ сообщения об ошибке отправки
 const showMessageError = () => {
-
+  
   messageError.classList.remove('visually-hidden');
 
   setTimeout(() => {

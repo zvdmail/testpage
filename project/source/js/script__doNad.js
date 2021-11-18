@@ -5,21 +5,13 @@ const fieldName = document.querySelector('.name');
 const fieldMail = document.querySelector('.mail');
 const fieldСonditions = document.querySelector('.conditions');
 const currentLocation = window.location;
+const currentHref = window.location.href;
 
-
+const ticket = currentHref.split('?ticket=')[1];
 const mailValue = document.getElementById('field-mail').value;
 const form = document.querySelector('.form');
 const SHOW_TIME = 5000;
 
-var arr1 = document.location.href.split('?');
-var ticket = '';
-if (typeof arr1[1] != 'undefined') {
-  arr2 = (arr1[1]).split('&');
-  for (var i in arr2) {
-    var get_param = (arr2[i]).split('=');
-    if (get_param[0] == 'direct-crm-ticket') ticket = get_param[1];
-  }
-}
 
 // Показ сообщения об успешной отправке
 const showMessageSuccess = () => {
@@ -33,7 +25,6 @@ const showMessageSuccess = () => {
 
 // Показ сообщения об ошибке отправки
 const showMessageError = () => {
-
   messageError.classList.remove('visually-hidden');
 
   setTimeout(() => {
@@ -58,29 +49,17 @@ const wrapperMindbox = () => {
           ]
         }
       },
-      onSuccess: function(response) {
-        console.log("In success function");
-        console.log(response);
-        showMessageSuccess();
-      },
-      onError: function(error){
-        console.log("In error function");
-        console.log(error);
-        showMessageError();
-      }
+      onSuccess: showMessageSuccess(),
+      onError: showMessageError (error)
     });
   }
 
 
 // Слушатель-2
 form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  console.log('form_submitted');
   if ((fieldName.checkValidity() === true) & (fieldMail.checkValidity() === true) & (fieldСonditions.checkValidity() === true) ) {
     const formFields = new FormData(e.target);
     const fieldMail = formFields.get('mail');
-    console.log("ticket: "+ticket);
-    console.log("email:"+ fieldMail);
     wrapperMindbox(ticket, fieldMail);
 }
 });
