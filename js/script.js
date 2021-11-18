@@ -2,7 +2,7 @@ const messageSuccess = document.querySelector('.success');
 const messageError = document.querySelector('.error');
 const button = document.querySelector('.form__button');
 const fieldName = document.querySelector('.name');
-const fieldMail = document.querySelector('.mail');
+var fieldMail = document.querySelector('.mail');
 const fieldСonditions = document.querySelector('.conditions');
 const currentLocation = window.location;
 
