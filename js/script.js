@@ -1,14 +1,7 @@
 const messageSuccess = document.querySelector('.success');
 const messageError = document.querySelector('.error');
-const button = document.querySelector('.form__button');
-var fieldName = document.querySelector('.name');
-var fieldMail = document.querySelector('.mail');
-const fieldСonditions = document.querySelector('.conditions');
-const currentLocation = window.location;
 
-
-var mailValue = document.getElementById('field-mail').value;
-var form = document.querySelector('.form');
+const form = document.querySelector('.form');
 const SHOW_TIME = 5000;
 
 var arr1 = document.location.href.split('?');
@@ -33,7 +26,7 @@ const showMessageSuccess = () => {
 
 // Показ сообщения об ошибке отправки
 const showMessageError = () => {
-
+  
   messageError.classList.remove('visually-hidden');
 
   setTimeout(() => {
@@ -43,7 +36,8 @@ const showMessageError = () => {
 
 
 // Код вызова для передачи адреса почты в Mindbox
-const wrapperMindbox = () => {
+const wrapperMindbox = (ticket,fieldMail) => {
+    
     mindbox("async", {
       operation: "LandingEmail",
       data: {
@@ -69,7 +63,6 @@ const wrapperMindbox = () => {
         showMessageError();
       }
     });
-    console.log("mindbox");
   }
 
 
@@ -77,61 +70,37 @@ const wrapperMindbox = () => {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   console.log('form_submitted');
-  if ((fieldName.checkValidity() === true) & (fieldMail.checkValidity() === true) & (fieldСonditions.checkValidity() === true) ) {
-    const formFields = new FormData(e.target);
-    const fieldMail = formFields.get('mail');
+  if ((e.target.querySelector('.name').checkValidity() === true) &&
+    (e.target.querySelector('.mail').checkValidity() === true) &&
+    (e.target.querySelector('.conditions').checkValidity() === true) ) {
+    var formFields = new FormData(e.target);
+    var fieldMail = formFields.get('mail');
     console.log("ticket: "+ticket);
     console.log("email:"+ fieldMail);
-    wrapperMindbox(ticket, fieldMail);
-
+    mindbox("async", {
+      operation: "LandingEmail",
+      data: {
+        customer: {
+          authenticationTicket: ticket,
+          email: fieldMail,
+          subscriptions: [
+            {
+              pointOfContact: "Email",
+              isSubscribed: "true"
+            }
+          ]
+        }
+      },
+      onSuccess: function(response) {
+        console.log("In success function");
+        console.log(response);
+        showMessageSuccess();
+      },
+      onError: function(error){
+        console.log("In error function");
+        console.log(error);
+        showMessageError();
+      }
+    });
 }
 });
-
-
-// // Слушатель нажатия кнопки отправки
-// button.addEventListener('click', () => {
-//   if ((fieldName.checkValidity() === true) & (fieldMail.checkValidity() === true) & (fieldСonditions.checkValidity() === true) ) {
-
-//     // wrapperMindbox(ticket);
-//   }
-// });
-
-
-
-// button.addEventListener('click', () => {
-//   if ((fieldName.checkValidity() === true) & (fieldMail.checkValidity() === true) & (fieldСonditions.checkValidity() === true)) {
-
-//     function wrapper (ticket) {
-//     mindbox("async", {
-//       operation: "LandingEmail",
-//       data: {
-//         customer: {
-//           authenticationTicket: ticket,
-//           email: "mail-test-ya123@yandex.ru",
-//           subscriptions: [
-//             {
-//               pointOfContact: "Email",
-//               isSubscribed: "true"
-//             }
-//           ]
-//         }
-//       },
-//       onSuccess: function () {
-//         messageError.classList.remove('visually-hidden');
-
-//         setTimeout(() => {
-//           messageError.classList.add('visually-hidden');
-//         }, SHOW_TIME);
-//       },
-
-//       onError: function (error) {
-//         messageSuccess.classList.remove('visually-hidden');
-
-//         setTimeout(() => {
-//           messageSuccess.classList.add('visually-hidden');
-//         }, SHOW_TIME);
-//       }
-//     });
-//   }
-// }
-// });
