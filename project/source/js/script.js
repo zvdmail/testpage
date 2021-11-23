@@ -1,10 +1,10 @@
-var messageSuccess = document.querySelector('.success');
-var messageError = document.querySelector('.error');
-var button = document.querySelector('.form__button');
+const messageSuccess = document.querySelector('.success');
+const messageError = document.querySelector('.error');
+const button = document.querySelector('.form__button');
 var fieldName = document.querySelector('.name');
 var fieldMail = document.querySelector('.mail');
-var fieldСonditions = document.querySelector('.conditions');
-var currentLocation = window.location;
+const fieldСonditions = document.querySelector('.conditions');
+const currentLocation = window.location;
 
 
 var mailValue = document.getElementById('field-mail').value;
