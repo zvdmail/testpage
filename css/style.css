@@ -15,10 +15,6 @@ blockquote {
 li {
   list-style-type: none;
 }
-* {
-  outline: 1px #00aeff solid;
-  outline-offset: -1px;
-}
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
@@ -399,7 +395,7 @@ li {
   border: 1px solid #C2C2C2;
   box-sizing: border-box;
   border-radius: 1.82536px;
-  height: 23px;
+  height: 25px;
   color: #C2C2C2;
 }
 @media (min-width: 768px) {
