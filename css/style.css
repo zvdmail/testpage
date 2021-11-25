@@ -427,7 +427,7 @@ li {
   border: none;
   background-color: #FFFFFF;
   padding: 2px 0 2px 5px;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 16px;
 }
 @media (min-width: 768px) {
